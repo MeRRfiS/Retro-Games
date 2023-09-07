@@ -21,7 +21,15 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = (transform.up * _inputMovement.y) + (transform.right * _inputMovement.x);
         _direction.x = direction.x;
         _direction.y = direction.y;
-        _rigidbody.velocity = direction;
+        _rigidbody.velocity = _direction * PlayerConstants.MOVING_SPEED;
+
+        float positionX = Mathf.Clamp(transform.localPosition.x, 
+                                      -PlayerConstants.MAX_POSITION_X,
+                                      PlayerConstants.MAX_POSITION_X);
+        float positionY = Mathf.Clamp(transform.localPosition.y,
+                                      -PlayerConstants.MAX_POSITION_Y,
+                                      PlayerConstants.MAX_POSITION_Y);
+        transform.localPosition = new Vector2(positionX, positionY);
     } 
 
     #endregion
