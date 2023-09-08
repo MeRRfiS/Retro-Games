@@ -49,4 +49,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da29690ed4b55b419a95a8a8bc57da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carPrefab: {fileID: 4312782103878186932, guid: 8c94ec5025e5db749ab0b813a4854232, type: 3}
+  _carPrefab: {fileID: 623184634512216685, guid: 0ec94a3758c520c4b88d18f0702171f6, type: 3}

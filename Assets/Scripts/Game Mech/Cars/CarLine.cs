@@ -31,7 +31,7 @@ public class CarLine : MonoBehaviour
             car.transform.localPosition = new Vector2(0, spawnPos);
             car.GoalPosition = new Vector2(0, MechConstants.GOAL_Y_POSITION * (int)_direction);
             car.SpawnPos = _spawnNewCarPos;
-            car.CarSpawn = carSpawn;
+            car.CarSpawnEvent = carSpawn;
             spawnPos -= reduceNumber;
         }
     }
@@ -50,6 +50,6 @@ public class CarLine : MonoBehaviour
         car.transform.localPosition = new Vector2(0, car.transform.localPosition.y * (int)_direction);
         car.GoalPosition = new Vector2(0, MechConstants.GOAL_Y_POSITION * (int)_direction);
         car.SpawnPos = _spawnNewCarPos;
-        car.CarSpawn = carSpawn;
+        car.CarSpawnEvent = carSpawn;
     }
 }

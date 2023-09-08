@@ -1,0 +1,34 @@
+{
+    "name": "Game Keys",
+    "maps": [
+        {
+            "name": "Keys",
+            "id": "c9bd0114-548c-44b7-91c4-272b4fda56ba",
+            "actions": [
+                {
+                    "name": "Return to menu",
+                    "type": "Button",
+                    "id": "de32bb59-7d1a-49b2-9e00-64dc04bf1c12",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "88cf80d2-55c7-497d-a991-17aee2837370",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Return to menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

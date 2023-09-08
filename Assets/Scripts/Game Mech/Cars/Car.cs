@@ -7,7 +7,7 @@ public class Car : MonoBehaviour
 {
     private float _spawnPos;
     private Vector2 _goalPosition;
-    private UnityEvent _carSpawn;
+    private UnityEvent _carSpawnEvent;
     private CarLine _line;
 
     public float SpawnPos
@@ -20,17 +20,18 @@ public class Car : MonoBehaviour
         set => _goalPosition = value;
     }
 
-    public UnityEvent CarSpawn
+    public UnityEvent CarSpawnEvent
     {
-        set => _carSpawn = value;
+        set => _carSpawnEvent = value;
     }
 
     private void ApplyMovement()
     {
+        Vector2 direction = (transform.up * 0) + (transform.right * -1);
         transform.localPosition = Vector2.MoveTowards(transform.localPosition,
                                                       _goalPosition,
-                                                      Time.deltaTime * MechConstants.CAR_SPEED);
-        if (_carSpawn != null)
+                                                      Time.deltaTime * CarGameController.GetInstance().CarSpeed);
+        if (_carSpawnEvent != null)
         {
             switch (_line.Direction)
             {
@@ -41,8 +42,8 @@ public class Car : MonoBehaviour
                     if (transform.localPosition.y <= -(_spawnPos)) return;
                     break;
             }
-            _carSpawn.Invoke();
-            _carSpawn = null;
+            _carSpawnEvent.Invoke();
+            _carSpawnEvent = null;
         }
         if (transform.localPosition.y == _goalPosition.y)
         {
